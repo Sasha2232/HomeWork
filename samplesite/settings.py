@@ -211,7 +211,7 @@ BBCODE_ALLOW_CUSTOM_TAGS = False
 
 # FILE_UPLOAD_MAX_MEMORY_SIZE = 2621440  # 2.5 Mb
 
-THUMBNAIL_ALIASES = {
+UMBNAIL_ALIASES = {
     'bbaord.Bb.picture':{
         'default': {
             'size': (500, 300),
@@ -306,5 +306,9 @@ REST_FRAMEWORK = {
         # 'rest_framework.permissions.IsAdminUser',
         # 'rest_framework.permissions.DjangoModelPermissions',
         # 'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly',
-    )
+    ),
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.BasicAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+    ]
 }

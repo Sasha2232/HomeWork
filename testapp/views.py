@@ -113,3 +113,26 @@ def test_email(request):
 
     mail_admins('Подъём!', 'Админ, не спи!', html_message='<strong>Админ, не спи!!</strong>')
     pass
+
+
+from django.contrib.auth import authenticate, login, logout
+
+
+def my_view(request):
+    username = request.POST['username']
+    password = request.POST['password']
+
+    user = authenticate(username=username, password=password)
+    if user is not None:
+        login
+    else:
+        pass
+
+    if request.user.is_authenticated:
+        pass
+    else:
+        pass
+
+
+def logout_view(request):
+    logout(request)
